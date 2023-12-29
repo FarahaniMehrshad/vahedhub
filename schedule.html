@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واحدهاب-برنامه هفتگی</title>
+    <link rel="stylesheet" href="schedule.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=0.5">
+</head>
+
+<body>
+    <div class="main-container">
+    <div class="navbar">
+            <div class="item">واحدهاب</div>
+            <div class="item" onclick="window.location.replace('courses.html');">دروس ارائه شده</div>
+            <div class="item selected" onclick="window.location.replace('schedule.html');">برنامه هفتگی</div>
+            <div class="item" onclick="window.location.replace('examtable.html');">برنامه امتحانی</div>
+            <div class="item" onclick="window.location.replace('saved.html');">ذخیره شده</div>
+            <div class="item" onclick="window.location.replace('index.html');">خروج</div>
+        </div>
+        <div class="bottom" id="test">
+            <div class="right">
+                <div class="times">
+                    <div>۸:۰۰</div>
+                    <div>۹:۰۰</div>
+                    <div>۱۰:۰۰</div>
+                    <div>۱۱:۰۰</div>
+                    <div>۱۲:۰۰</div>
+                    <div>۱۳:۰۰</div>
+                    <div>۱۴:۰۰</div>
+                    <div>۱۵:۰۰</div>
+                    <div>۱۶:۰۰</div>
+                    <div>۱۷:۰۰</div>
+                    <div>۱۸:۰۰</div>
+                </div>
+                <div class="wrap">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>شنبه</td>
+                            </tr>
+                            <tr>
+                                <td>یکشنبه</td>
+                            </tr>
+                            <tr>
+                                <td>دوشنبه</td>
+                            </tr>
+                            <tr>
+                                <td>سه‌شنبه</td>
+                            </tr>
+                            <tr>
+                                <td>چهارشنبه</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="left">
+                <div class="username">
+                    <p>خوش آمدید</p>
+                    <p></p>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="جستجوی درس">
+                </div>
+                <div class="units">
+                    <span>تعداد واحد اخذ شده: </span>
+                    <span>0</span>
+                </div>
+                <div class="courses">
+                    <table>
+                        <thead>
+                            <th>درس</th>
+                            <th>استاد</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="courseHover">
+        <p>شنبه: ۸-۱۰</p>
+        <p>یکشنبه: ۹-۱۰</p>
+        <p>تاریخ امتحان: ۲۳/۴/۱۴۰۱</p>
+        <p>ساعت امتحان: ۱۱-۱۴</p>
+        <p class="courseConflict">درس تداخل زمان دارد</p>
+    </div>
+</body>
+<script>
+    function myFunction(x) {
+        if (x.matches) {
+            document.getElementById('test').scrollTop = 0;
+        }
+    }
+    const mmObj = window.matchMedia("(min-width: 1200px)")
+    myFunction(mmObj);
+    mmObj.addListener(myFunction)
+</script>
+<script src="schedule.js"></script>
+
+</html>
