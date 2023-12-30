@@ -7,7 +7,7 @@ const onLoadData = (response) => {
 
     data = response.target.responseText;
 
-    if (data == undefined || data == ""){
+    if (data == undefined || data == "") {
         document.querySelector(".login .container").innerHTML += '<p class="fail">نام کاربری یا رمز عبور اشتباه است</p>';
         return;
     }
@@ -26,7 +26,7 @@ const login = () => {
     document.querySelector('button').innerText = "صبر کنید";
     document.querySelector('button').disabled = true;
     const fail = document.querySelector('.login .container .fail');
-    if ( fail != undefined){
+    if (fail != undefined) {
         document.adoptNode(fail);
     }
 
@@ -37,3 +37,9 @@ const login = () => {
     xhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
     xhttp.send();
 };
+
+
+// ---------------------------------------
+document.body.onload = () => {
+    document.querySelector(".login").style.animationName = "showDeg";
+}

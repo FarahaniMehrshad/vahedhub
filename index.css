@@ -41,7 +41,11 @@ body{
 }
 
 .login{
-    background-color: var(--secondary-color);
+    animation-duration: 6000ms;
+    animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1);
+    animation-fill-mode: forwards;
+    background: linear-gradient(var(--GradientDeg), var(--gradient-primary), var(--gradient-secondary));
+    border: none !important;
     border-radius: 2rem;
     width: 40rem;
     height: 50rem;
@@ -90,11 +94,9 @@ h1 > span{
 
 .username input{
     font-family: "Vazir";
-    border-radius: 0.5rem;
     border: 0.1rem solid #c2c2c2;
     box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.2);
     padding: 0.4rem;
-    background-color: #282828;
     color: white;
 }
 
@@ -105,13 +107,13 @@ h1 > span{
 }
 
 .password input{
-    background-color: #282828;
     color: white;
 }
 
 input{
+    background-color: var(--primary-color);
     font-family: "Vazir";
-    border-radius: 0.5rem;
+    border-radius: 0.6rem;
     border: 0.1rem solid #c2c2c2;
     box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.2);
     padding: 0.4rem;
@@ -137,16 +139,20 @@ button:disabled{
     cursor: auto;
 }
 
-.hubcolor{
-    position: absolute;
-    background-color: var(--blue);
-    top: 1%;
-    left: 27%;
-    width: 8rem;
-    height: 5rem;
-    border-radius: 0.5rem;
-}
 
 .fail{
     color: yellow;
+}
+
+/*  login form animations-->*/
+@property --GradientDeg {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 60deg;
+}
+/* animations keyframe */
+@keyframes showDeg {
+    100% {
+        --GradientDeg: -20deg;
+    }
 }
